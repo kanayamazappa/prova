@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from models import Person
+from models import Person, Log
 from serializer import PersonSerializer
 import facebook, hashlib, hmac, requests
 
@@ -27,12 +27,21 @@ def PersonRest(request, _facebookid=False):
             lista = lista[:int(limit)]
         
         for item in lista:
-          data.append({
-              'facebookId': item.facebookId,
-              'name': item.name,
-              'gender': item.gender,
-              'link': item.link,
-          })
+            data.append({
+                'facebookId': item.facebookId,
+                'name': item.name,
+                'gender': item.gender,
+                'link': item.link,
+            })
+        
+        try:
+            Log(
+                owner=request.user,
+                action='list',
+            ).save()
+        except:
+            pass
+          
         return Response(data=data, status=200)
     elif request.method == 'POST':
         facebookId = request.data.get('facebookId', False)
@@ -92,20 +101,42 @@ def PersonRest(request, _facebookid=False):
         )
         person.save()
         
-        data = {
-            'status': 201,
-            'person': {
-                'facebookId': person.facebookId,
-                'name': person.name,
-                'link': person.link,
-                'gender': person.gender,
-            },
-        }
+        try:
+            Log(
+                owner=request.user,
+                person=person,
+                action='create',
+            ).save()
+        except:
+            pass
         
-        return Response(data=data, status=201)
+        #data = {
+        #    'status': 201,
+        #    'person': {
+        #        'facebookId': person.facebookId,
+        #        'name': person.name,
+        #        'link': person.link,
+        #        'gender': person.gender,
+        #    },
+        #}
+        
+        return Response(status=201)
         
     elif request.method == 'DELETE':
-        Person.objects.filter(facebookId=_facebookid).delete()
+        try:
+            person = Person.objects.filter(facebookId=_facebookid).delete()
+        except:
+            return Response(data={'status': 404, 'message': u'Não foi possível excluir a pessoa.'}, status=404)
+        
+        try:
+            Log(
+                owner=request.user,
+                person=person,
+                action='delete',
+            ).save()
+        except:
+            pass
+        
         return Response(status=204)
     else:
         return Response(data={'status': 404, 'message': u'Operação inválida'}, status=404)
