@@ -67,6 +67,7 @@ Importe os dados, deixe o arquivo db.json na raiz do projeto:
 	python manage.py migrate
 	python manage.py loaddata db.json
 
+Agora apenas rode o projeto:
 
-	
-	
+	python manage.py runserver 0.0.0.0:8080
+
