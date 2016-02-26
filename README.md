@@ -64,7 +64,7 @@ Crie a base de dados Mysql para o projeto e edit o arquivo prova/settings.py:
 	
 Importe os dados, deixe o arquivo db.json na raiz do projeto:
 
-	python manager.py loaddata db.json
+	python manage.py loaddata db.json
 
 
 	
