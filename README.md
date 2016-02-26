@@ -3,27 +3,26 @@
 ## Dependências:
 
 Python 2.7.10
+
 Download: https://www.python.org/downloads/
 
 PIP 8.0.2
+
 Instalaçao: https://pip.pypa.io/en/stable/installing/
 
 Virtualenv 13.1.2
+
 Instalação: https://virtualenv.readthedocs.org/en/latest/installation.html
 
 Mysql
+
 Download: https://dev.mysql.com/downloads/installer/
 
-Instalação:
+## Instalação:
 
 Primeiro crie a virualenv:
 
-virtualenv restapi
-
-Entre na pasta da virtualenv e ative o roteiro:
-	
-	Linux: source bin/activate
-	Windows: Scripts/activate.bat
+	virtualenv restapi
 
 Eu particularmente sempre crio uma pasta para colocar o projeto então
 	
@@ -32,9 +31,13 @@ Eu particularmente sempre crio uma pasta para colocar o projeto então
 
 Clone o projeto:
 
-	mkdir prova
-	cd prova
+	git clone https://github.com/kanayamazappa/prova.git
+	
 
+Entre na pasta da virtualenv e ative o roteiro:
+	
+	Linux: source bin/activate
+	Windows: Scripts/activate.bat
 
 
 
