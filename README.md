@@ -30,7 +30,7 @@ Eu particularmente sempre crio uma pasta para colocar o projeto então
 	mkdir src
 	cd src
 
-Crie a pasta do projeto:
+Clone o projeto:
 
 	mkdir prova
 	cd prova
