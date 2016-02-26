@@ -49,3 +49,23 @@ Observação no caso de Windows deixei o arquivo MySQL_python-1.2.5-cp27-none-wi
 	pip install MySQL_python-1.2.5-cp27-none-win_amd64.whl
 	pip install -r requirements.txt
 
+Crie a base de dados Mysql para o projeto e edit o arquivo prova/settings.py:
+
+	DATABASES = {
+    		'default': {
+        		'ENGINE': 'django.db.backends.mysql',
+        		'NAME': 'prova', # Nome de sua base de dados
+        		'USER': 'root', # Nome do usuário
+        		'PASSWORD': '', # Senha
+        		'HOST': '', # Host
+        		'PORT': '3306', # Porta
+    		}
+	}
+	
+Importe os dados, deixe o arquivo db.json na raiz do projeto:
+
+	python manager.py loaddata db.json
+
+
+	
+	
