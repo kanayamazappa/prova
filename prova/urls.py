@@ -20,12 +20,10 @@ from person import rest
 
 router = routers.DefaultRouter()
 
-#router.register(r'persons', PersonViewSet)
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include(router.urls)),
-    url(r'api/persons/$', rest.PersonRest),
-    url(r'api/persons/(?P<_facebookid>[\d]+)/$', rest.PersonRest),
+    url(r'^', include(router.urls)),
+    url(r'persons/$', rest.PersonRest),
+    url(r'persons/(?P<_facebookid>[\d]+)/$', rest.PersonRest),
 ]

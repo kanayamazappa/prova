@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'prova.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prova',
+        'NAME': 'testegit',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.0.76',
         'PORT': '3306',
     }
 }
@@ -151,5 +151,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+    'TEST_REQUEST_RENDERER_CLASSES': (
+        'rest_framework.renderers.MultiPartRenderer',
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.TemplateHTMLRenderer'
     ),
 }
