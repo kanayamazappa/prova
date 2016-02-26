@@ -33,18 +33,19 @@ Clone o projeto:
 
 	git clone https://github.com/kanayamazappa/prova.git
 	
+Retone na pasta da virtualenv e ative o roteiro:
 
-Entre na pasta da virtualenv e ative o roteiro:
-	
+	cd ..	
 	Linux: source bin/activate
 	Windows: Scripts/activate.bat
 
-
-
 Instale as dependências, deixe o arquivo requirements.txt na raiz do projeto:
 	
+	cd src/prova	
 	pip install -r requirements.txt
 
-Observação no caso de Windows deixei o arquivo MySQL_python-1.2.5-cp27-none-win_amd64.whl na raiz do projeto então:
+Observação no caso de Windows deixei o arquivo MySQL_python-1.2.5-cp27-none-win_amd64.whl na raiz do projeto então remove a linha MySQL-python=1.2.5 do arquivo requirements.txt e:
 
 	pip install MySQL_python-1.2.5-cp27-none-win_amd64.whl
+	pip install -r requirements.txt
+
