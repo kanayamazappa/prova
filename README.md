@@ -1,7 +1,6 @@
-# prova
-Teste de Desenvolvimento de API Rest com Python.
+# Teste de Desenvolvimento de API Rest com Python.
 
-Dependências:
+## Dependências:
 
 Python 2.7.10
 Download: https://www.python.org/downloads/
