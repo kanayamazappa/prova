@@ -33,7 +33,7 @@ Clone o projeto:
 
 	git clone https://github.com/kanayamazappa/prova.git
 	
-Retone na pasta da virtualenv e ative o roteiro:
+Retone na pasta da virtualenv e troque de contexto:
 
 	cd ..	
 	Linux: source bin/activate
