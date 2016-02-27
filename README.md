@@ -71,3 +71,21 @@ Agora apenas rode o projeto:
 
 	python manage.py runserver 0.0.0.0:8080
 
+Para executar o caso de teste:
+
+	python manage.py test person
+
+### Considerações
+
+Para a criação utilizei o Django  1.9.2, Djago Rest 3.3.2, Facebook SDK, Requests 2.9.1, durante o desenvolvimento me deparei com umas dificuldades:
+
+	O Facebook removeu a propriedade username da API então utilizei a propriedade Link  (https://developers.facebook.com/docs/apps/upgrading#upgrading_v2_0_graph_api), a propriedade Gender então utilizei uma API que retorna o sexo de acordo com o primeiro nome (https://genderize.io/).
+
+Para testar a aplicação utilizei uma extensão do Google Chrome que é Postman, e também pela API do próprio Django Rest (http://localhost:8080/persons/).
+
+
+Agradeço a oportunidade e espero ter atendido as espectativas.
+
+Grato,
+Paulo Kanayama.
+
